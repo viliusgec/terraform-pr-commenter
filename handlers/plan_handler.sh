@@ -38,8 +38,8 @@ plan_fail () {
   debug "delimiter_start_cmd: $delimiter_start_cmd"
 
   clean_input=$(echo "$INPUT" | perl -pe "${delimiter_start_cmd}")
-
-  post_diff_comments "plan" "Terraform \`plan\` Failed for Workspace: \`$WORKSPACE\`" "$clean_input"
+  
+  post_diff_comments "plan" "Terraform \`plan\` Failed for Environment: \`$WORKSPACE\`" "$clean_input"
 }
 
 post_plan_comments () {
