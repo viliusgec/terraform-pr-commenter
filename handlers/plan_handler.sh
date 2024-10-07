@@ -62,7 +62,7 @@ post_plan_comments () {
   clean_input=$(echo "$INPUT" | perl -pe "${delimiter_start_cmd}")
   clean_input=$(echo "$clean_input" | sed -r "${delimiter_end_cmd}")
 
-  post_diff_comments "plan" "Terraform \`plan\` Succeeded for Workspace: \`$WORKSPACE\`" "$clean_input"
+  post_diff_comments "plan" "Terraform \`plan\` Succeeded for Environment: \`$WORKSPACE\`" "$clean_input"
 }
 
 post_outputs_comments() {
@@ -82,5 +82,5 @@ post_outputs_comments() {
   clean_input=$(echo "$INPUT" | perl -pe "${delimiter_start_cmd}")
   clean_input=$(echo "$clean_input" | sed -r "${delimiter_end_cmd}")
 
-  post_diff_comments "outputs" "Changes to outputs for Workspace: \`$WORKSPACE\`" "$clean_input"
+  post_diff_comments "outputs" "Changes to outputs for Environment: \`$WORKSPACE\`" "$clean_input"
 }
